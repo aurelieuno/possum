@@ -106,6 +106,7 @@ class UncontrolledDatePicker extends React.Component {
    * @return {object} an object with two keys: isoValue & formattedValue
    */
   valuesFromIso(iso) {
+    console.log("iso value", iso)
     return {
       isoValue: iso,
       formattedValue: this.isoToFormatted(iso),
