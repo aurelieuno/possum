@@ -19,10 +19,9 @@ function goodDateInput() {
     return true
   } else {
     const element = document.createElement('input')
-
-    element.type = 'date'
-    element.value = '!)'
-    return element.value === ''
+    
+    element.setAttribute('type', 'date')
+    return element.type === 'date'
   }
 }
 
@@ -141,6 +140,7 @@ class UncontrolledDatePicker extends React.Component {
       event.target.value,
       this.dateFormat
     ).toISODate()
+
     console.log(event.target.value, 'eventtargetvalue')
     console.log(this.dateFormat, 'thisdateFormat')
     // console.log('asISO', asISO)

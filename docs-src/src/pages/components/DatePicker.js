@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import ExampleSection from '../../ExampleSection'
 import scope from '../../ExampleScope'
 import Headers from '../../Headers'
+import DatePicker from 'awesome-possum/lib/DatePicker'
 
 const examples = {
   'Without Props': require('raw!../../examples/DatePicker/Basic.js.example'),
@@ -39,12 +40,7 @@ export default class DatePickerExamplePage extends Component {
             highlight or filter dates arbitrarily.
           </p>
         </Headers>
-        <ExampleSection
-          title="Examples"
-          examples={examples}
-          depth={1}
-          scope={scope}
-        />
+        <DatePicker />
       </div>
     )
   }

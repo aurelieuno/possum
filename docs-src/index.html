@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+  <!-- <input type="date"/> -->
+  <script>
+    function goodDateInput() 
+    { if (typeof window === 'undefined') 
+    { return true;
+     } else { 
+//  var element = document.createElement('input');
+ let element = document.createElement('input')
+ console.log(element)
+ console.log(element.type);
+  element.setAttribute("type", "date")
+ console.log(element.type)
+
+  // element.type = 'date';
+//    element.value = '!)';
+//       console.log(element.value === '') ;
+//       console.log(element.type === "date")
+       } }
+        goodDateInput()
+  </script>
+  
+</body>
+</html>
