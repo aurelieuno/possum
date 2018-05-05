@@ -121,8 +121,12 @@ class UncontrolledDatePicker extends React.Component {
   isoToFormatted(iso) {
     if (!iso) {
       return ''
+    } else {
+      return iso
     }
-    return DateTime.fromISO(iso).toFormat(this.dateFormat)
+    console.log('iso', iso)
+    // console.log(DateTime.fromISO(iso).toFormat(this.dateFormat))
+    // return DateTime.fromISO(iso).toFormat(this.dateFormat)
   }
 
   /**
@@ -137,6 +141,9 @@ class UncontrolledDatePicker extends React.Component {
       event.target.value,
       this.dateFormat
     ).toISODate()
+    console.log(event.target.value, 'eventtargetvalue')
+    console.log(this.dateFormat, 'thisdateFormat')
+    // console.log('asISO', asISO)
 
     if (this.props.onChange) {
       // Call into an onChange we got as props
@@ -144,7 +151,8 @@ class UncontrolledDatePicker extends React.Component {
     }
 
     // Update isoValue & formattedValue from the ISO we built
-    this.setState(this.valuesFromIso(asISO))
+    // this.setState(this.valuesFromIso(asISO))
+    this.setState(this.valuesFromIso(event.target.value))
   }
 
   /**
@@ -171,6 +179,8 @@ class UncontrolledDatePicker extends React.Component {
   dateChanger(date) {
     // Update isoValue & formattedValue based on the date value (which is an iso
     // date)
+    console.log('date', date)
+    console.log('this.valuesFromIso(date)', this.valuesFromIso(date))
     this.setState(this.valuesFromIso(date))
     // Update the native input value with the formatted version of the new date
     // (this prevents the native input value from sticking with a hand-typed

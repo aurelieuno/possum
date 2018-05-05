@@ -56,6 +56,7 @@ export default class Calendar extends Component {
     this.state = {
       date: this.asLuxon(this.props.selectedDate),
     }
+    console.log(this.props.selectedDate, 'thisselectedDate')
   }
 
   /**
@@ -67,6 +68,7 @@ export default class Calendar extends Component {
    * @return {void}
    */
   componentWillReceiveProps(nextProps) {
+    console.log('nextProps.selectedDate',nextProps.selectedDate)
     if (nextProps.selectedDate !== this.props.selectedDate) {
       this.setState({date: this.asLuxon(nextProps.selectedDate)})
     }
@@ -80,6 +82,7 @@ export default class Calendar extends Component {
    * @return {DateTime} - a local DateTime
    */
   asLuxon(date) {
+    console.log('date', date)
     if (!date) {
       return DateTime.local()
     }
@@ -177,7 +180,7 @@ export default class Calendar extends Component {
             >
               {previousLabel}
             </button>
-            <span className="rev-Calendar-header-label">
+            <span className="rev-Calendar-header-label"> 
               {this.state.date.toLocaleString({
                 month: 'short',
                 year: 'numeric',
